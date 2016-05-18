@@ -23,13 +23,13 @@ module Oden
   end
 
   def self.save_image(url, save_path)
-  	file_name = File.basename(url) + ".jpg"
-  	file_path = save_path + file_name
-  	FileUtils.mkdir_p(save_path) unless FileTest.exist?(save_path)
-  	open(file_path, 'wb') do |output|
-  		open(url) do |data|
-  			output.write(data.read)
-  		end
-  	end
+    file_name = File.basename(url) + ".jpg"
+    file_path = save_path + file_name
+    FileUtils.mkdir_p(save_path) unless FileTest.exist?(save_path)
+    open(file_path, 'wb') do |output|
+      open(url) do |data|
+        output.write(data.read)
+      end
+    end
   end
 end
