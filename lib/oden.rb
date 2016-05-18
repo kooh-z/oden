@@ -13,6 +13,13 @@ module Oden
     	images_list.push(anchor[:src])
       save_image(anchor[:src], save_path)
     end
+    if images_list.empty?
+      puts "Sorry... empty...."
+      false
+    else
+      puts "Exist!! Success!!"
+      true
+    end
   end
 
   def self.save_image(url, save_path)
